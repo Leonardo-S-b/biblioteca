@@ -1,0 +1,50 @@
+{
+  "livros": [
+    {
+      "titulo": "O Guia do Desenvolvedor",
+      "autor": "Maria Silva",
+      "isbn": "978-0-0000-0000-1",
+      "anoPublicacao": 2025,
+      "quantidadeEstoque": 3,
+      "preco": 59.9,
+      "id": "f16decc6-0bb5-455e-be64-e08f36a0dfb2"
+    },
+    {
+      "titulo": "O Guia do Desenvolvedor",
+      "autor": "Maria Silva",
+      "isbn": "978-0-0000-0000-1",
+      "anoPublicacao": 2025,
+      "quantidadeEstoque": 3,
+      "preco": 59.9,
+      "id": "bcc4127f-1a27-48a2-8da0-e65106fc6ef6"
+    },
+    {
+      "titulo": "O Guia do Desenvolvedor",
+      "autor": "Maria Silva",
+      "isbn": "978-0-0000-0000-1",
+      "anoPublicacao": 2025,
+      "quantidadeEstoque": 3,
+      "preco": 59.9,
+      "id": "543b0e65-3ef5-4e68-8a2a-d83afc22d76e"
+    }
+  ],
+  "pessoas": [
+    {
+      "nome": "João Pereira",
+      "endereco": "Rua Exemplo, 123",
+      "telefone": "",
+      "email": "",
+      "id": "db5a0f79-c9ee-4d0d-958b-bc505830d627"
+    }
+  ],
+  "emprestimos": [
+    {
+      "livroId": "543b0e65-3ef5-4e68-8a2a-d83afc22d76e",
+      "pessoaId": "db5a0f79-c9ee-4d0d-958b-bc505830d627",
+      "dataEmprestimo": "2025-11-07T02:54:22.511Z",
+      "dataDevolucao": "2025-11-14T02:54:22.511Z",
+      "devolvido": false,
+      "id": "7439d118-b1c8-4ece-bd24-9cd142e49537"
+    }
+  ]
+}
