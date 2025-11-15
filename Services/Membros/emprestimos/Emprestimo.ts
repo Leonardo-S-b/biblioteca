@@ -11,8 +11,8 @@ export class Emprestimo {
     constructor(livro: Livro, pessoa: Pessoas | undefined, dataEmprestimo: Date, dataDevolucao: Date) {
         this._livro = livro;
         this._pessoa = pessoa;
-        this._dataEmprestimo = dataEmprestimo;
-        this._dataDevolucao = dataDevolucao;
+        this._dataEmprestimo = new Date(dataEmprestimo);
+        this._dataDevolucao = new Date(dataDevolucao);
     }
 
     get livro(): Livro {

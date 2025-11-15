@@ -7,6 +7,7 @@ export class CadLivros extends Livro {
     private _preco: number;
     private _removerLivro: boolean
     private _editarLivro: boolean;
+    Autor: string;
     constructor(titulo: string, autor: string, isbn: string, anoPublicacao: number, quantidadeEstoque: number, preco: number, removerLivro: boolean, addLivro: boolean, editarLivro: boolean) {
 
         super(titulo, autor, isbn, anoPublicacao);
