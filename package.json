@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --runInBand",
+    "test:emprestimo": "jest TestEmprestimoService --runInBand",
+    "test:watch": "jest --watch --runInBand"
   },
   "keywords": [],
   "author": "",
@@ -15,13 +17,25 @@
     "@jest/globals": "^30.2.0",
     "@types/node": "^24.10.0",
     "@types/prompt-sync": "^4.2.3",
-    "@types/uuid": "^10.0.0",
+    "jest": "^30.2.0",
     "prompt-sync": "^4.2.0",
     "ts-jest": "^29.4.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testMatch": [
+      "**/Testes/**/*.ts",
+      "**/*.test.ts"
+    ]
+  },
   "dependencies": {
-    "uuid": "^13.0.0"
+    "chalk": "^5.6.2"
   }
 }

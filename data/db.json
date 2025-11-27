@@ -1,4 +1,42 @@
 {
+  "pessoas": [
+    {
+      "nome": "João Pereira",
+      "endereco": "Rua Exemplo, 123",
+      "telefone": "",
+      "email": "",
+      "matricula": "MAT-0001",
+      "ativo": true,
+      "id": "db5a0f79-c9ee-4d0d-958b-bc505830d627"
+    },
+    {
+      "nome": "Graciane Cunha",
+      "endereco": "rua almirante barroso 125 fragata",
+      "telefone": "53981069999",
+      "email": "gracianecunha@gmail.com",
+      "matricula": "MAT-0002",
+      "ativo": true,
+      "id": "56cd891e-99a7-45f3-94ad-5d114b40351c"
+    },
+    {
+      "nome": "Leonardo Bezerra",
+      "endereco": "rua maria joaquina 001",
+      "telefone": "53981056243",
+      "email": "leonardobezerra@gmail.com",
+      "matricula": "MAT-0003",
+      "ativo": true,
+      "id": "36616f69-ddf5-4198-b5b3-4f89c916fee7"
+    },
+    {
+      "nome": "gabriel ferreira",
+      "endereco": "max vertappen 22",
+      "telefone": "53940028922",
+      "email": "gabrielferreira@gmail.com",
+      "matricula": "MAT-0004",
+      "ativo": true,
+      "id": "53538f93-1488-43ac-8b3a-53a9d9fd0865"
+    }
+  ],
   "livros": [
     {
       "titulo": "O Guia do Desenvolvedor",
@@ -23,18 +61,36 @@
       "autor": "Maria Silva",
       "isbn": "978-0-0000-0000-1",
       "anoPublicacao": 2025,
-      "quantidadeEstoque": 3,
+      "quantidadeEstoque": 4,
       "preco": 59.9,
       "id": "543b0e65-3ef5-4e68-8a2a-d83afc22d76e"
-    }
-  ],
-  "pessoas": [
+    },
     {
-      "nome": "João Pereira",
-      "endereco": "Rua Exemplo, 123",
-      "telefone": "",
-      "email": "",
-      "id": "db5a0f79-c9ee-4d0d-958b-bc505830d627"
+      "titulo": "Casas estranhas",
+      "autor": "uketsu",
+      "isbn": "9788551013090",
+      "anoPublicacao": 1052025,
+      "quantidadeEstoque": 30,
+      "preco": 33.15,
+      "id": "d3dfa9b6-3ef0-4270-8828-844b9f675276"
+    },
+    {
+      "titulo": "Hobbits",
+      "autor": "J.R.R tolken",
+      "isbn": "40028922",
+      "anoPublicacao": 1937,
+      "quantidadeEstoque": 9,
+      "preco": 80,
+      "id": "141aa9e4-c649-4598-9492-5104b26f3cb3"
+    },
+    {
+      "titulo": "jurassic park",
+      "autor": "Machiel Crichton",
+      "isbn": "840-000-000",
+      "anoPublicacao": 1993,
+      "quantidadeEstoque": 10,
+      "preco": 50,
+      "id": "3427d764-3d11-4046-bf4a-7c81d6456160"
     }
   ],
   "emprestimos": [
@@ -43,8 +99,36 @@
       "pessoaId": "db5a0f79-c9ee-4d0d-958b-bc505830d627",
       "dataEmprestimo": "2025-11-07T02:54:22.511Z",
       "dataDevolucao": "2025-11-14T02:54:22.511Z",
+      "devolvido": true,
+      "id": "7439d118-b1c8-4ece-bd24-9cd142e49537",
+      "dataDevolucaoPrevista": "2025-12-03T19:23:24.631Z",
+      "dataDevolucaoReal": "2025-11-26T00:00:00.000Z"
+    },
+    {
+      "livroId": "bcc4127f-1a27-48a2-8da0-e65106fc6ef6",
+      "pessoaId": "56cd891e-99a7-45f3-94ad-5d114b40351c",
+      "dataEmprestimo": "2025-11-26T00:00:00.000Z",
+      "dataDevolucaoPrevista": "2025-11-27T00:00:00.000Z",
+      "devolvido": true,
+      "id": "123936aa-7142-4787-bd97-e3f65f2c7bcd",
+      "dataDevolucaoReal": "2025-11-26T00:00:00.000Z"
+    },
+    {
+      "livroId": "141aa9e4-c649-4598-9492-5104b26f3cb3",
+      "pessoaId": "36616f69-ddf5-4198-b5b3-4f89c916fee7",
+      "dataEmprestimo": "2025-11-27T00:00:00.000Z",
+      "dataDevolucaoPrevista": "2025-11-28T00:00:00.000Z",
       "devolvido": false,
-      "id": "7439d118-b1c8-4ece-bd24-9cd142e49537"
+      "id": "25e22ed2-2f6d-46d8-8edb-605bde0dc2a0"
+    },
+    {
+      "livroId": "3427d764-3d11-4046-bf4a-7c81d6456160",
+      "pessoaId": "56cd891e-99a7-45f3-94ad-5d114b40351c",
+      "dataEmprestimo": "2025-11-27T00:00:00.000Z",
+      "dataDevolucaoPrevista": "2025-11-28T00:00:00.000Z",
+      "devolvido": true,
+      "id": "c2c51800-b2a8-46e9-9fbb-6717ac90d624",
+      "dataDevolucaoReal": "2025-11-28T00:00:00.000Z"
     }
   ]
 }

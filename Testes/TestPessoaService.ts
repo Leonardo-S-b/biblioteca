@@ -26,13 +26,13 @@ describe("teste do PessoaService", () => {
     });
 
     test("deve adicionar uma nova pessoa se não existir", async () => {
-        const dto = { nome: "João Silva", endereco: "Rua A, 123" };
+        const dto = { nome: "João Silva", matricula: "MAT-001", endereco: "Rua A, 123" };
         const id = await pessoaService.addIfNotExists(dto);
         expect(id).toBeDefined();
     });
 
     test("deve retornar o id da pessoa existente usando findById", async () => {
-        const dto = { nome: "Maria Souza", endereco: "Rua B, 456" };
+        const dto = { nome: "Maria Souza", matricula: "MAT-002", endereco: "Rua B, 456" };
         const idAdicionado = await pessoaService.addIfNotExists(dto);
         console.log("ID adicionado:", idAdicionado);
 
@@ -44,8 +44,8 @@ describe("teste do PessoaService", () => {
     });
 
     test("deve listar todas as pessoas", async ()=>{
-        const dto1 = { nome: "Ana Lima", endereco: "Rua C, 789" };
-        const dto2 = { nome: "Carlos Pereira", endereco: "Rua D, 101" };
+        const dto1 = { nome: "Ana Lima", matricula: "MAT-003", endereco: "Rua C, 789" };
+        const dto2 = { nome: "Carlos Pereira", matricula: "MAT-004", endereco: "Rua D, 101" };
         await pessoaService.addIfNotExists(dto1);
         await pessoaService.addIfNotExists(dto2);
         const todasPessoas = await pessoaService.listAll();

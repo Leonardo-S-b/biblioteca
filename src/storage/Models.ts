@@ -14,19 +14,22 @@ export interface Pessoa {
   endereco?: string;
   telefone?: string;
   email?: string;
+  matricula?: string;
+  ativo?: boolean;
 }
 
 export interface Emprestimo {
   id: string;
   livroId: string;
   pessoaId: string;
-  dataEmprestimo: string; 
-  dataDevolucaoPrevista?: string; 
-  dataDevolucaoReal?: string; 
-  devolvido: boolean;}
-  
-  export interface Database {
-    pessoas: Pessoa[];
-    livros: Livro[];
-    emprestimos: Emprestimo[];
-  }
+  dataEmprestimo: string;
+  dataDevolucaoPrevista?: string;
+  dataDevolucaoReal?: string;
+  devolvido: boolean;
+}
+
+export interface Database {
+  pessoas: Pessoa[];
+  livros: Livro[];
+  emprestimos: Emprestimo[];
+}

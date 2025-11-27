@@ -1,33 +1,25 @@
-import { Emprestimo } from "../Services/Membros/emprestimos/Emprestimo";
-import { Livro } from "../Services/Membros/ModuleCadLivros/Livro";
-import { Pessoas } from "../Services/Membros/Pessoas";
-
+import { Livro } from "../src/domain/Livro";
+import { Pessoa } from "../src/domain/Pessoa";
 import {describe, expect, test} from '@jest/globals';
 
-describe('Testes de Empréstimo de livros', () => {
-    test("deve realizar um emprestimo com sucesso", () => {
-        const livro = new Livro("1984", "George Orwell", "978-0451524935", 1949);
-        const pessoa = new Pessoas("João Silva", 12345, "Rua A, 123");
-        const emprestimo = new Emprestimo(livro, pessoa, new Date('2024-06-01'), new Date('2024-06-15'));
+// Nota: Este teste está desatualizado. A classe Emprestimo agora usa uma arquitetura diferente.
+// Consulte TestEmprestimoService.ts para testes atualizados.
+
+describe('Testes de Empréstimo de livros (LEGADO - usar TestEmprestimoService.ts)', () => {
+    test("deve criar um livro e pessoa", () => {
+        const livro = new Livro({
+            titulo: "1984",
+            autor: "George Orwell",
+            isbn: "978-0451524935",
+            anoPublicacao: 1949,
+            quantidadeEstoque: 5,
+            preco: 29.90
+        });
+        const pessoa = new Pessoa({
+            nome: "João Silva"
+        });
         
-        emprestimo.realizarEmprestimo();
-        expect(emprestimo.realizarEmprestimo).toBeDefined;
-
+        expect(livro.titulo).toBe("1984");
+        expect(pessoa.nome).toBe("João Silva");
     });
-    test("deve realizar uma devolução com sucesso", () => {
-        const livro = new Livro("1984", "George Orwell", "978-0451524935", 1949);
-        const pessoa = new Pessoas("João Silva", 12345, "Rua A, 123");
-        const emprestimo = new Emprestimo(livro, pessoa, new Date('2024-06-01'), new Date('2024-06-15'));
-        emprestimo.realizarDevolucao();
-        expect(emprestimo.realizarDevolucao).toBeDefined;
-    })
-
-    test("deve Listar emprestimos ativos", () => {
-        const livro = new Livro("1984", "George Orwell", "978-0451524935", 1949);
-        const pessoa = new Pessoas("João Silva", 12345, "Rua A, 123");
-        const emprestimo = new Emprestimo(livro, pessoa, new Date('2024-06-01'), new Date('2024-06-15'));
-        emprestimo.listarEmprestimosAtivos();
-        expect(emprestimo.listarEmprestimosAtivos).toBeDefined;
-    })
-
 })

@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import { promises as fs } from "fs";
 import * as path from "path";
-import { v4 as uuidv4 } from "uuid";
+import { randomUUID } from "crypto";
 import { Database } from "./Models";
 
 
@@ -12,13 +12,27 @@ export class JsonStorage {
         this.filePath = filePath ?? path.resolve(process.cwd(), "data", "db.json");
     }
 
+    private normalizeDatabase(data: Partial<Database>): Database {
+        return {
+            pessoas: Array.isArray(data.pessoas) ? data.pessoas : [],
+            livros: Array.isArray(data.livros) ? data.livros : [],
+            emprestimos: Array.isArray(data.emprestimos) ? data.emprestimos : [],
+        };
+    }
+
     private async readRaw(): Promise<Database> {
         try {
             const text = await fs.readFile(this.filePath, { encoding: "utf8" });
-            return JSON.parse(text) as Database;
+            const parsed = JSON.parse(text) as Partial<Database>;
+            const normalized = this.normalizeDatabase(parsed);
+            const needsRewrite = !Array.isArray(parsed.pessoas) || !Array.isArray(parsed.livros) || !Array.isArray(parsed.emprestimos);
+            if (needsRewrite) {
+                await this.writeRaw(normalized);
+            }
+            return normalized;
         } catch (err: any) {
             if (err.code === "ENOENT") {
-                const initial: Database = { pessoas: [], livros: [], emprestimos: [] };
+                const initial = this.normalizeDatabase({});
                 await this.writeRaw(initial);
                 return initial;
             }
@@ -54,7 +68,7 @@ export class JsonStorage {
         item: Omit<Extract<Database[T][number], { id: string }>, "id">
     ): Promise<string> {
         const db = await this.readRaw();
-        const id = uuidv4();
+        const id = randomUUID();
         
         const newItem = { ...(item as any), id } as Database[T][number];
         (db[collection] as any[]).push(newItem);
